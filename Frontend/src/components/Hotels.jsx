@@ -3,14 +3,19 @@ import useFetch from "../useFetch";
 
 const Hotels = () => {
   const [successMessage, setSuccessMessage] = useState("");
-  const { data, loading, error } = useFetch("http://localhost:3000/hotels");
+  const { data, loading, error } = useFetch(
+    "https://bi-1-3-hw-2-backend-seven.vercel.app/hotels"
+  );
 
   const handleDelete = async (hotelId) => {
     try {
-      const response = await fetch(`http://localhost:3000/hotels/${hotelId}`, {
-        method: "DELETE",
-        "Content-Type": "application/json",
-      });
+      const response = await fetch(
+        `https://bi-1-3-hw-2-backend-seven.vercel.app/hotels/${hotelId}`,
+        {
+          method: "DELETE",
+          "Content-Type": "application/json",
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to delete hotel");

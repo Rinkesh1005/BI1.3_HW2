@@ -32,7 +32,7 @@ const AddHotelForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch("http://localhost:3000/hotels", {
+      await fetch("https://bi-1-3-hw-2-backend-seven.vercel.app/hotels", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(hotel),
